@@ -1,0 +1,74 @@
+html {
+  font-family: sans-serif;
+}
+
+.mainFrame {
+  width: 50%;
+  height: 500px;
+  margin: 50px auto;
+  padding: 5px;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+}
+
+/* 480px 총 공간 - 180px(박스들 높이) = 300(확장시 컨텐츠 공간) */
+
+.group {
+  border: 1px solid #c5c5c5;
+  margin: 2px;
+  border-radius: 3px;
+}
+
+/* 첫번째 섹션 */
+
+.section {
+  height: 45px;
+  line-height: 45px;
+  cursor: pointer;
+}
+.sectionDefault {
+  background-color: #f6f6f6;
+  color: #454545;
+}
+.sectionDefault:hover {
+  background-color: #ededed;
+}
+.sectionActive {
+  background-color: #007fff;
+  color: #ffffff;
+  border: 1px solid #003eff;
+}
+
+/* 두번째 섹션 */
+.secondSection {
+  /* display: none; */
+  padding: 0 20px;
+  height: 0px;
+  transition: height 0.5s ease-out;
+  transform: scaleY(0);
+  overflow:hidden;
+}
+
+.secondSection.active {
+  /* display: block; */
+  padding: 20px;
+  height: 248px;
+  transform: scaleY(1);
+  /* transform-origin: top; */
+}
+
+/* 화살표 */
+.inlineArrow, .inlineArrow2 {
+  background-image: url(https://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_444444_256x240.png);
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+  vertical-align: middle;
+}
+.inlineArrow {
+  background-position: -32px -16px;
+}
+.inlineArrow2 {
+  background-position: -65px -16px;
+}
+

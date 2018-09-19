@@ -1,0 +1,793 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  width: 100%;
+  height: 75px;
+  background-color: black;
+}
+
+#logo {
+  display: inline-block;
+  margin-left: 65px;
+  width: 120px;
+  padding: 25px 0;
+}
+
+.navMain {
+  float: right;
+  height: 100%;
+  margin-right: 53px;
+}
+
+.category {
+  height: 35px;
+  display: inline-block;
+  padding: 20px 20px;
+  vertical-align: middle;
+}
+
+.category_inner{
+  display: inline-block;
+  color: white;
+  font-size: 12px;
+  font-weight: 100;
+  word-spacing: 1px;
+  letter-spacing: 1.8px;
+  line-height:17px;
+  margin: 10px 0;
+}
+
+.category_inner:hover{
+  border-bottom: 1px solid white;
+}
+
+#getStarted {
+  border: 1px solid white;
+  padding: 0 18px;
+  margin-left: 15px;
+}
+
+#getStarted:hover {
+  box-shadow: 3px 3px white;
+}
+
+.firstSection {
+  width: 100%;
+  height: 550px;
+  background-color:black;
+}
+
+.firstMainTitle {
+  padding: 50px; 
+}
+
+.firstMainText {
+  display: inline-block;
+  width: 410px;
+  margin: 85px 70px;
+  
+}
+
+.workHard {
+  display: inline-block;
+  font-family: "Maison Neue Mono", sans-serif;
+  color:white;
+  font-size: 75px;
+  line-height: 80px;
+  letter-spacing: 10px;
+  width: 400px;
+}
+
+.secondWord {
+  display: inline-block;
+  margin-top: 35px;
+  color:white;
+  font-size: 18px;
+  font-weight:100;
+  line-height: 1.3;
+  letter-spacing: 3.5px;
+  word-spacing:3px;
+}
+
+.firstMainImg {
+  position:relative;
+  width: 510px;
+  float: right;
+  margin-top: 35px;
+}
+
+.studentImg {
+  width: 250px;
+}
+
+.studentText {
+  position: absolute;
+  color:white;
+  font-size: 45px;
+  top: 29px;
+  left: 38%;
+  transform: rotate(270deg);
+}
+
+.studentId {
+  position: absolute;
+  color: white;
+  bottom: 0;
+  left: 52%;
+  font-weight: 100;
+}
+
+.StId {
+  font-size: 14px;
+  margin-bottom: 5px;
+  letter-spacing: 2.5px;
+  line-height: 15px;
+  color: white;
+}
+
+.StPo{
+  font-size: 18px;
+  letter-spacing: 2.5px;
+  line-height: 23px;
+  color: white;
+}
+
+.leftArrow {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 70px);
+}
+
+.rightArrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.secondSection {
+  background-color: #f3f3f3;
+}
+
+.secondContent {
+  padding: 80px;
+}
+
+.contentContainer, .sixthContent{
+  text-align: center;
+}
+
+.secondCopy{
+  font-size: 30px;
+  line-height: 36px;
+  word-spacing: 10px;
+  letter-spacing: 5px;
+  margin-bottom: 15px;
+}
+
+.secondPara, .sixthPara{
+  font-size:14px;
+  font-weight: 100;
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+
+.enterEmail {
+  height: 85px;
+}
+
+.emailLeft {
+  display: inline-block;
+  margin-left: 25%;
+  width: 405px;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.emailBox {
+  margin :14px;
+  margin-left:0;
+  border:1px solid #979797;
+  width: 100%;
+  height: 43px;
+  padding:6px;
+  padding-left: 15px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: lightgray;
+  font-weight: 100;
+}
+
+.emailRight{
+  display: inline-block;
+  margin: 10px;
+  margin-bottom: 13.6px;
+  border: 1px solid black;
+  padding: 10px 16px;
+  height: 43px;
+  font-size: 12px;
+  font-weight: 100;
+  box-sizing: border-box;
+  line-height: 20px;
+  vertical-align: middle;
+  background-color:white;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.emailRight:hover{
+  box-shadow: 3px 3px black;
+}
+
+.thirdSection {
+  padding: 84px 36px;
+}
+
+.thirdLeft {
+  display: inline-block;
+  padding: 40px 20px;
+  width: 360px;
+  height: 480px;
+}
+
+.thirdCopy, .fifthCopy , .eighthCopy {
+  font-size: 42px;
+  line-height: 48px;
+  word-spacing: 12px;
+  letter-spacing: 7px;
+  margin-bottom: 10px;
+}
+
+.thirdPara, .fifthPara {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 100;
+  word-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.learnMore {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 10px 18px;
+  height: 43px;
+  box-sizing: border-box;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 100;
+  line-height: 25px;
+  color:black;
+  cursor: pointer;
+}
+
+.learnMore:hover {
+  box-shadow: 3px 3px black;
+}
+
+.thirdRight, .fifthRight {
+  float: right;
+  position: relative;
+  width: 600px;
+}
+
+.thirdImg1 {
+  position: absolute;
+  width: 350px;
+  height: 500px;
+  top: -60px;
+  left: 0;
+}
+
+.thirdImg2 {
+  position: absolute;
+  width: 233px;
+  right: 70px;
+  top: 180px;
+}
+
+.thirdImgId, .thirdImg2Id {
+  margin-top: 15px;
+  margin-left: 2px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 2.3px;
+  word-spacing: 2px;
+  color:#494949;
+}
+
+.fourthSection, .seventhSection {
+  background-color: black;
+  padding: 50px;
+  position: relative;
+}
+
+.fourthLeft, .seventhLeft {
+  display: inline-block;
+  position: absolute;
+  top: 380px;
+  width: 75px;
+  margin-right: 10px;
+}
+
+.fourthPrograms, .seventhOutcome {
+  color: white;
+  font-size: 70px;
+  line-height: 75px;
+  transform: rotate(270deg);
+  letter-spacing: 10px;
+}
+
+.fourthRight {
+  margin-left: 155px;
+}
+
+.fourthBox {
+  position:relative;
+  width: 96%;
+  border: 1px solid white;
+  box-shadow: 3px 3px #fff;
+  padding: 14px;
+  height: 140px;
+  margin: 14px 0;
+}
+
+.fourthBoxMain {
+  display: inline-block;
+  width: 365px;
+  font-size: 30px;
+  line-height: 34px;
+  color: white;
+  letter-spacing: 5px;
+  word-spacing: 3px;
+}
+
+.fourthBoxSub {
+  color: #979797;
+  font-size: 14px;
+  width: 312px;
+  margin-right: 25px;
+  float: right;
+  line-height: 24px;
+  word-spacing: 1px;
+  font-weight: 100;
+}
+
+.fourthEvent {
+  position: absolute;
+  bottom:0;
+  padding: 25px 2px;
+  color:white;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.fourthLearnMore {
+  position: absolute;
+  bottom:0;
+  right:0;
+  color: #979797;
+  font-size: 13px;
+  font-weight: 100;
+  line-height: 15px;
+  letter-spacing: 1.5px;
+  margin: 20px 30px;
+  border-bottom: 1px solid #979797;
+  cursor: pointer;
+}
+
+.fourthLearnMore:hover {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.fifthSection, .sixthSection, .eighthSection {
+  padding: 84px 45px;
+}
+
+.fifthLeft {
+  display: inline-block;
+  width: 435px;
+  height: 650px;
+  margin-left: 10px;
+  margin-left: 10px;
+}
+
+.fifthLearn {
+  border: 1px solid black;
+  font-size: 12px;
+  font-weight: 100;
+  text-align: center;
+  height: 43px;
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  color:black;
+  cursor: pointer;
+}
+
+.fifthLearn:hover {
+  box-shadow: 3px 3px black;
+}
+
+.sixthCopy {
+  font-size: 42px;
+  line-height: 48px;
+  word-spacing: 10px;
+  letter-spacing: 5px;
+  margin-bottom: 15px;
+}
+
+.sixthLogo {
+  margin: 20px;
+  text-align: center;
+}
+
+.sixthLogoInner {
+  display: inline-block;
+  height: 45px;
+  margin: 20px;
+  width: auto;
+}
+
+.sixthLogoInner img {
+  height: auto;
+  margin-bottom: 70px;
+  vertical-align: middle;
+}
+
+.seventhRight1 {
+  display: inline-block;
+  width: 28%;
+  margin-left: 115px;
+  margin-top: 55px;
+}
+
+.seventhNumber {
+  font-size: 85px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: px;
+}
+
+.percent {
+  font-size: 48px;
+}
+
+.seventhText {
+  color: #979797;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 2.5px;
+  word-spacing: 3px;
+  margin-right: 120px;
+  margin-top: 10px;
+}
+
+.seventhText2 {
+  color: white;
+}
+
+.seventhMore {
+  display: inline-block;
+  color: #979797;
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border-bottom: 1px solid #979797;
+  margin-top: 16px;
+  padding-bottom: 3px;
+}
+
+.seventhMore:hover {
+  color:white;
+  border-bottom: 1px solid white;
+}
+
+.seventhRight2 {
+  position: absolute;
+  top: 50px;
+  left: 39%;
+  width: 33%;
+  margin-top: 55px;
+}
+
+.seventhRight3 {
+  position: absolute;
+  top:50px;
+  left: 73%;
+  width: 33%;
+  margin-top: 55px;
+}
+
+.seventhStudentBox {
+  width: 100%;
+  position:relative;
+}
+
+.seventhStudent1 {
+  display: block;
+  width: 286px;
+  margin-left: 80px;
+  margin-top: 270px;
+  margin-bottom: 120px;
+}
+
+.seventhStudentText {
+  margin-left: 71px;
+  margin-top: 35px;
+}
+
+.seventhStudentName {
+  color: white;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.seventhStudentInfo {
+  color: #979797;
+  font-size: 14px;
+  line-height: 24px;
+  word-spacing: 2px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+.seventhStudent2 {
+  display: inline-block;
+  width: 286px;
+  position: absolute;
+  bottom: 90px;
+  left: 450px;
+}
+
+.seventhStudent3 {
+  display: inline-block;
+  width: 286px;
+  position: absolute;
+  bottom: 150px;
+  left: 820px;
+}
+
+.seventhButton {
+  border: 1px solid #797979;
+  box-shadow: 3px 3px #797979;
+  width: 350px;
+  height: 40px;
+  color: #797979;
+  text-align: center;
+  position: absolute;
+  bottom:0;
+  right:0;
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 1.5px;
+  line-height: 40px;
+}
+
+.seventhButton:hover {
+  border: 1px solid white;
+  box-shadow: 3px 3px white;
+  color:white;
+}
+
+.eighthLeft {
+  display: inline-block;
+  width: 390px;
+  margin-left: 90px;
+}
+
+.eighthPara {
+  color:#494949;
+  font-size: 19px;
+  font-weight: 100;
+  line-height: 24px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  margin-right: 60px;
+}
+
+.eighthRight {  
+  display: inline-block;
+  width: 430px;
+  margin-left: 115px;
+  height: 200px;
+  vertical-align: top;
+}
+
+.emailUs {
+  border: 1px solid black;
+  box-shadow: 3px 3px black;
+  width: 100%;
+  height: 63px;
+  text-align:center;
+  color: black;
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-weight: 100;
+  line-height: 60px;  
+  box-sizing: border-box;
+  margin-top: 70px;
+}
+
+.ninethSection{
+  background-color: #f3f3f3;
+  padding: 84px;
+}
+
+.ninethText {
+  display: inline-block;
+  width: 220px;
+  margin-left: 120px;
+}
+
+.ninethCopy {
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 3.5px; 
+  word-spacing: 4px;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+
+.ninethPara {
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  color: #494949;
+  line-height: 20px;
+  font-weight: 100;
+}
+
+.ninethEmail {
+  display: inline-block;
+  width: 680px;
+  margin-left: 78px;
+  vertical-align : top;
+}
+
+.ninethEmailtext {
+  padding-left: 2px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.ninethEmailBox {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.ninethEmailBox input{
+  border: 1px solid #979797;
+  width: 420px;
+  height: 30px;
+  padding: 5px 14px;
+}
+
+.ninethEmailBox input::placeholder{
+  font-size:14px;
+  font-weight: 100;
+}
+
+.ninethSignUp {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 1px 16px;
+  height: 42px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 100;
+  line-height: 38px;
+  vertical-align: top;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.ninethSignUp:hover {
+  box-shadow: 3px 3px black;
+}
+
+.lastSection {
+  padding: 84px 45px;
+}
+
+.lastContent {
+  padding: 10px;
+}
+
+.lastLogo {
+  display: inline-block;
+  margin-right: 45px;
+  vertical-align: top;
+}
+
+.lastCollumn1 {
+  display: inline-block;
+  width: 270px;
+  vertical-align: top;
+}
+
+.lastHeadline {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  padding-bottom: 15px;
+}
+
+.rowsInner {
+  text-decoration:none;
+  color:#979797;
+  font-size: 13px;
+  line-height: 26px;
+  font-weight: 100;
+  letter-spacing: 0.3px;
+}
+
+.rowsInner:hover {
+  color: #494949;
+}
+
+.lastCopyRight {
+  margin-top: 30px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 100;
+}

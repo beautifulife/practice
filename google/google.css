@@ -1,0 +1,277 @@
+body {
+  font-family: sans-serif;
+}
+
+a {
+  color: rgba(0,0,0,0.87);
+  text-decoration: none;
+}
+
+.header {
+  height: 50px;
+  position: relative;
+  text-align: right;
+}
+
+.container {
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  height: 30px;
+}
+
+.h_link{
+  display: inline-block;
+  text-align: center;
+  vertical-align:middle;
+}
+
+.h_link.box {
+  font-size: small;
+  margin: 0 auto;
+  margin-right: 5px;
+  vertical-align:middle;
+}
+
+.h_link.box.inner {
+  vertical-align: middle;
+  margin: 0;
+  padding-right: 5px;
+}
+
+.h_link.box.inner.text {
+  color: rgba(0,0,0,0.87);
+  text-decoration: none;
+}
+
+.h_link.img {
+  height:30px;
+  width:30px;
+}
+
+.h_link.img.button {
+  opacity: .55;
+  background-size: 528px 68px;
+}
+
+.h_link.img.button#first{
+  background-image: url(https://ssl.gstatic.com/gb/images/i2_2ec824b0.png);
+  background-position: -132px -38px;
+}
+
+.h_link.img.button#second{
+  background-image: url(https://ssl.gstatic.com/gb/images/i2_2ec824b0.png);
+  background-position: -194px -21px;
+  background-color: rgba(0,0,0);
+  color: #fff;
+  margin: 5px;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin-left:15px;
+}
+
+.h_link.img.button#third{
+  position: relative;
+  color:white;
+  background-color: purple;
+  height: 30px;
+  width: 30px;
+  border-radius:50%;
+  opacity:100;
+  margin-left:10px;
+}
+
+span {
+  display:inline-block;
+  position: absolute;
+  text-align: center;
+  top:7px;
+  right:10px;
+}
+
+.content{
+  position: relative;
+  height:250px;
+}
+
+.logo{
+  position:relative;
+  height:380px;
+}
+
+#googleLogo{
+  display: block;
+  text-align:center;
+  width: 272px;
+  height: 92px;
+  margin: 0 auto;
+  padding-top: 129px;
+}
+
+.search {
+  width: 590px;
+  height: 44px;
+  border: 0.5px solid lightgray;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 30px;
+  position: relative;
+}
+
+.input {
+  width: 488px;
+  height: 40px;
+  padding: 2px;
+  display: inline-block;
+}
+
+input {
+  font: bold 16px sans-serif;
+  line-height: 36px;
+  height: 36px;
+  position: absolute;
+  left: 10px;
+  border: none;
+  width: 460px;
+  outline:none;
+}
+
+.inputImg {
+  width:34px;
+  height:40px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 2px 4px;
+  text-align: center;
+  position: relative;
+}
+
+#keyboard{
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.buttonContainer {
+  width: 400px;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 20px;
+  position: relative;
+}
+
+.button2 {
+  position: absolute;
+  border: 0.5px solid #f2f2f2;;
+  border-radius: 3px;
+  background-color: #f2f2f2;; 
+  box-sizing: border-box;
+  font-size: 13px;
+  
+}
+
+.b1 {
+  width : 100px;
+  height: 36px;
+  text-align:center;
+  left: 20%;
+}
+
+.b2 {
+  width : 135px;
+  height: 36px;
+  text-align:center;
+  left: 47%;
+}
+
+#b1 {
+  display:inline-block;
+  width:100%;
+  height:35px;
+  vertical-align: middle;
+  color: #757575;
+  background-clip: padding-box;
+}
+
+#b1:before {
+  display:inline-block;
+  content:"";
+  height:100%;
+  vertical-align: middle;
+  color: #757575;
+}
+
+
+#b2 {
+  display:inline-block;
+  width:100%;
+  height:100%;
+  vertical-align: middle;
+  color: #757575;
+}
+
+#b2:before {
+  content:"";
+  display:inline-block;
+  height:100%;
+  vertical-align: middle;
+  color: #757575;
+}
+
+.trick {
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.service {
+  font-size: 13px;
+  margin: 0 auto;  
+  width: 30%;
+  text-align: center;
+}
+
+footer {
+}
+
+#korea {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  background-color:#f2f2f2;
+  border: 0.5px solid lightgray;
+  box-sizing: border-box;
+  bottom:40px;
+  left:0;
+  padding: 10px 20px;
+}
+
+#korea2{
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  background-color:#f2f2f2;
+  border: 0.5px solid lightgray;
+  box-sizing: border-box;
+  bottom:0px;
+  left:0;
+  padding: 10px 15px;
+}
+
+.footer.left{
+  margin-left: 5px;
+  height: 40px;
+}
+
+#korearight {
+  width: 400px;
+  float:right;
+  text-align: right;
+}
+
+.footer.right {
+  display: inline-block;
+  margin-right: 10px;
+}

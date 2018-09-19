@@ -13,3 +13,4 @@ node_modules
 
 public/dist
 dist
+package-lock.json

@@ -1,4 +1,4 @@
-// 기본 function 정의
+// basic function;
 function rand(m,n){
   return m+ Math.floor((n-m+1)*Math.random());
 }
@@ -20,7 +20,9 @@ while(money > 1 && money < 100){
   //money bet
   let bets = {"crown": 0, "anchor":0, "heart":0, "spade":0, "club":0, "diamond":0};
   let totalBet = rand(1, money);
-  if (totalBet === 7){
+  if (new Date().getDay() === 3){
+    totalBet = 1;
+  } else if (totalBet === 7){
     totalBet = money;
     bets.heart = totalBet;
   } else {
@@ -54,6 +56,6 @@ while(money > 1 && money < 100){
     }
   }
   money = money + winnings*2;
-  console.log(`\twinnings: ${winnings}`);
+  console.log(`\twinnings: ${winnings} pence`);
 }
-console.log(`\tending money: ${money}`);
+console.log(`\tending money: ${money} pence`);

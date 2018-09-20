@@ -6,7 +6,7 @@ function randFace() {
   return ["crown", "anchor","heart", "spade", "club", "diamond"][rand(0,5)];
 }
 
-// 게임 시작
+// start Game
 console.log("welcome to the game");
 
 let money = 50;

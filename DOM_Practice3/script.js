@@ -110,3 +110,98 @@ window.onload = realTime;
     }
   }
 })();
+
+// -----------------달력-----------------
+
+(function () {
+  var calendarYear = document.getElementById("calendar_year");
+  var calendarMonth = document.getElementById("calendar_month");
+  var calendarLast = document.getElementById("button_left");
+  var calendarNext = document.getElementById("button_right");
+  var calendarDays = document.getElementById('calendar_days');
+  
+  var calendarDate = new Date();
+  var newDate = new Date();
+  calendarDate.setDate(1);
+
+  var monthArr = ['January','Febuary','March','April','May','June','July','August','September','October','November','December'];
+
+  calendarYear.innerHTML = calendarDate.getFullYear();
+  calendarMonth.innerHTML = strMonth(calendarDate.getMonth());
+
+  calendarLast.addEventListener('click', pastCalendar);
+  calendarNext.addEventListener('click', nextCalendar);
+
+  
+  function openCalendar() {
+    var firstDate = new Date(calendarDate.getFullYear(), calendarDate.getMonth(), 1);
+    var lastDate = new Date(calendarDate.getFullYear(), calendarDate.getMonth()+1, 0);
+    var saveMonth = calendarDate.getMonth();
+    while (calendarDate.getMonth() === saveMonth) {
+      writeDays (calendarDate.getDate(), calendarDate.getDay());
+      calendarDate.setDate(calendarDate.getDate()+1);
+    }
+    calendarDate.setDate(1);
+  }
+  openCalendar();
+
+  function writeDays(date, day) {
+    var addDay = document.createElement('span');
+    // addDay.classList.add()
+    addDay.textContent = date;
+    if (date === 1) {
+      if (day !== 0) {
+        addDay.style.marginLeft = (day * 48+8) + 'px' ;
+      }
+    } 
+
+    if (calendarDate.toString() === newDate.toString()){
+      addDay.style.border = '2px solid gold';
+      // addDay.style.color = 'gold';
+    }
+    calendarDays.appendChild(addDay);
+
+
+  }
+  
+  function pastCalendar() {
+    eraseCalendar();
+    var calendarPastMonth = document.getElementById("calendar_month").innerHTML;
+    if (calendarPastMonth === 'January'){
+      var calendarPastYear = document.getElementById("calendar_year").innerHTML;
+      calendarYear.innerHTML = calendarPastYear*1-1;
+      calendarMonth.innerHTML = strMonth(11);
+    } else {
+      calendarPastMonth = monthArr.indexOf(calendarPastMonth);
+      console.log(calendarPastMonth);
+      calendarMonth.innerHTML = strMonth(calendarPastMonth-1);
+    }
+    calendarDate.setMonth(calendarDate.getMonth()-2);
+    openCalendar();
+  }
+
+  function nextCalendar() {
+    eraseCalendar();
+    var calendarFutureMonth = document.getElementById("calendar_month").innerHTML;
+    if (calendarFutureMonth ==="December") {
+      var calendarFutureYear = document.getElementById("calendar_year").innerHTML;
+      calendarYear.innerHTML = calendarFutureYear*1+1;
+      calendarMonth.innerHTML = strMonth(0);
+    } else {
+      calendarFutureMonth = monthArr.indexOf(calendarFutureMonth);
+      console.log(calendarFutureMonth);
+      calendarMonth.innerHTML = strMonth(calendarFutureMonth+1);
+    }
+    calendarDate.setMonth(calendarDate.getMonth());
+    openCalendar();
+  }
+
+  function eraseCalendar() {
+    calendarDays.innerHTML = ''
+  }
+  
+  function strMonth (month) {
+    return monthArr[month];
+  }
+
+})();

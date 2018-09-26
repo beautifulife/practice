@@ -100,14 +100,13 @@ window.onload = realTime;
       console.log(list.textContent);
       console.log(recordList);
       recordList.appendChild(list);
-
       // console.log('a');
     }
   }
 
   function recordsClear(){
     while(recordList.firstElementChild.firstChild){
-    recordList.firstElementChild.removeChild(recordList.firstElementChild.firstChild);
+      recordList.firstElementChild.remove(recordList.firstElementChild.firstChild);
     }
   }
 })();

@@ -122,12 +122,15 @@ window.onload = realTime;
   
   var calendarDate = new Date();
   var newDate = new Date();
+
   calendarDate.setDate(1);
 
   var monthArr = ['January','Febuary','March','April','May','June','July','August','September','October','November','December'];
 
   calendarYear.innerHTML = calendarDate.getFullYear();
   calendarMonth.innerHTML = strMonth(calendarDate.getMonth());
+
+  openCalendar();
 
   calendarLast.addEventListener('click', pastCalendar);
   calendarNext.addEventListener('click', nextCalendar);
@@ -143,7 +146,6 @@ window.onload = realTime;
     }
     calendarDate.setDate(1);
   }
-  openCalendar();
 
   function writeDays(date, day) {
     var addDay = document.createElement('span');
@@ -154,8 +156,12 @@ window.onload = realTime;
         addDay.style.marginLeft = (day * 48+8) + 'px' ;
       }
     } 
-
-    if (calendarDate.toString() === newDate.toString()){
+    // console.log(calendarDate);
+    // console.log(newDate);
+    // console.log(calendarDate.getTime());
+    // console.log(calendarDate === newDate);
+    // console.log(calendarDate.getTime() === newDate.getTime());
+    if (calendarDate.getTime() === newDate.getTime()){
       addDay.style.border = '2px solid gold';
       // addDay.style.color = 'gold';
     }
@@ -173,7 +179,6 @@ window.onload = realTime;
       calendarMonth.innerHTML = strMonth(11);
     } else {
       calendarPastMonth = monthArr.indexOf(calendarPastMonth);
-      console.log(calendarPastMonth);
       calendarMonth.innerHTML = strMonth(calendarPastMonth-1);
     }
     calendarDate.setMonth(calendarDate.getMonth()-2);
@@ -189,7 +194,6 @@ window.onload = realTime;
       calendarMonth.innerHTML = strMonth(0);
     } else {
       calendarFutureMonth = monthArr.indexOf(calendarFutureMonth);
-      console.log(calendarFutureMonth);
       calendarMonth.innerHTML = strMonth(calendarFutureMonth+1);
     }
     calendarDate.setMonth(calendarDate.getMonth());

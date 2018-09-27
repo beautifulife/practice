@@ -181,7 +181,7 @@ window.onload = realTime;
       calendarPastMonth = monthArr.indexOf(calendarPastMonth);
       calendarMonth.innerHTML = strMonth(calendarPastMonth-1);
     }
-    calendarDate.setMonth(calendarDate.getMonth()-2);
+    calendarDate.setMonth(calendarDate.getMonth()-2);ㄴ
     openCalendar();
   }
 

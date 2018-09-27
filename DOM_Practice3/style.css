@@ -226,3 +226,10 @@ li {
   border-radius: 50%;
   cursor: pointer;
 }
+
+.copyRight {
+  color: lightgray;
+  font-size: 0.8rem;
+  margin-top: 20px;
+  letter-spacing: 0.1rem;
+}

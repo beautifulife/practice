@@ -135,11 +135,14 @@ window.onload = realTime;
   calendarLast.addEventListener('click', pastCalendar);
   calendarNext.addEventListener('click', nextCalendar);
 
-  
+  function strMonth (month) {
+    return monthArr[month];
+  }
+
   function openCalendar() {
     var saveMonth = calendarDate.getMonth();
     while (calendarDate.getMonth() === saveMonth) {
-      writeDays (calendarDate.getDate(), calendarDate.getDay());
+      writeDays(calendarDate.getDate(), calendarDate.getDay());
       calendarDate.setDate(calendarDate.getDate()+1);
     }
     calendarDate.setDate(1);
@@ -147,11 +150,10 @@ window.onload = realTime;
 
   function writeDays(date, day) {
     var addDay = document.createElement('span');
-    // addDay.classList.add()
     addDay.textContent = date;
     if (date === 1) {
       if (day !== 0) {
-        addDay.style.marginLeft = (day * 48+8) + 'px' ;
+        addDay.style.marginLeft = (day * 48 + 8) + 'px' ;
       }
     } 
     // console.log(calendarDate);
@@ -201,9 +203,4 @@ window.onload = realTime;
   function eraseCalendar() {
     calendarDays.innerHTML = ''
   }
-  
-  function strMonth (month) {
-    return monthArr[month];
-  }
-
 })();

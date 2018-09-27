@@ -137,8 +137,6 @@ window.onload = realTime;
 
   
   function openCalendar() {
-    var firstDate = new Date(calendarDate.getFullYear(), calendarDate.getMonth(), 1);
-    var lastDate = new Date(calendarDate.getFullYear(), calendarDate.getMonth()+1, 0);
     var saveMonth = calendarDate.getMonth();
     while (calendarDate.getMonth() === saveMonth) {
       writeDays (calendarDate.getDate(), calendarDate.getDay());

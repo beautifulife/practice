@@ -119,7 +119,8 @@ window.onload = realTime;
   var calendarLast = document.getElementById("button_left");
   var calendarNext = document.getElementById("button_right");
   var calendarDays = document.getElementById('calendar_days');
-  
+  var calendarDaysReal ;
+
   var calendarDate = new Date();
   var newDate = new Date();
 
@@ -132,8 +133,11 @@ window.onload = realTime;
 
   openCalendar();
 
+  
+
   calendarLast.addEventListener('click', pastCalendar);
   calendarNext.addEventListener('click', nextCalendar);
+  
 
   function strMonth (month) {
     return monthArr[month];
@@ -141,33 +145,58 @@ window.onload = realTime;
 
   function openCalendar() {
     var saveMonth = calendarDate.getMonth();
+    for (let i=1; i<=42; i++){
+      createSpace();
+    }
+    var day = calendarDate.getDay();
     while (calendarDate.getMonth() === saveMonth) {
-      writeDays(calendarDate.getDate(), calendarDate.getDay());
+      writeDays(calendarDate.getDate(), day, calendarDate);
       calendarDate.setDate(calendarDate.getDate()+1);
     }
     calendarDate.setDate(1);
+
+    calendarDaysReal = document.querySelectorAll('.calendarDaysReal');
+    for (let i=0; i<calendarDaysReal.length; i++){
+      calendarDaysReal[i].addEventListener('click', daysClick);
+    }
   }
 
-  function writeDays(date, day) {
-    var addDay = document.createElement('span');
-    addDay.textContent = date;
-    if (date === 1) {
-      if (day !== 0) {
-        addDay.style.marginLeft = (day * 48 + 8) + 'px' ;
-      }
-    } 
-    // console.log(calendarDate);
-    // console.log(newDate);
-    // console.log(calendarDate.getTime());
-    // console.log(calendarDate === newDate);
-    // console.log(calendarDate.getTime() === newDate.getTime());
+  function createSpace() {
+    var addSpace = document.createElement('span');
+    // addSpace.className = 'calendarSpace';
+    calendarDays.appendChild(addSpace);
+  }
+  // 마진사용시 방법 -----------------------------
+  // function writeDays(date, day) {
+  //   var addDay = document.createElement('span');
+  //   addDay.textContent = date;
+  //   if (date === 1) {
+  //     if (day !== 0) {
+  //       addDay.style.marginLeft = (day * 48 + 8) + 'px' ;
+  //     }
+  //   } 
+  //   // console.log(calendarDate);
+  //   // console.log(newDate);
+  //   // console.log(calendarDate.getTime());
+  //   // console.log(calendarDate === newDate);
+  //   // console.log(calendarDate.getTime() === newDate.getTime());
+  //   if (calendarDate.getTime() === newDate.getTime()){
+  //     addDay.style.border = '2px solid gold';
+  //     // addDay.style.color = 'gold';
+  //   }
+  //   calendarDays.appendChild(addDay);
+  // }
+
+  function writeDays(date, day, data) {
+    // var addDay = document.getElementById('calendarSpace');
+    addDay = calendarDays.children;
+    var calc = date + day - 1;
+    addDay[calc].setAttribute('class','calendarDaysReal');
+    addDay[calc].setAttribute('data-calendar-data', data);
+    addDay[calc].innerHTML = date;
     if (calendarDate.getTime() === newDate.getTime()){
-      addDay.style.border = '2px solid gold';
-      // addDay.style.color = 'gold';
+      addDay[calc].setAttribute('id','today');
     }
-    calendarDays.appendChild(addDay);
-
-
   }
   
   function pastCalendar() {
@@ -200,7 +229,114 @@ window.onload = realTime;
     openCalendar();
   }
 
-  function eraseCalendar() {
-    calendarDays.innerHTML = ''
+  function daysClick(e) {
+    var active = document.getElementsByClassName('active');
+    for(let i=0; i<active.length; i++) {
+      active[i].classList.remove('active');
+    }
+    // var cDay = document.createElement
+    e.currentTarget.classList.add('active');
+    // console.log(e.currentTarget);
+    document.querySelector('.todoList').classList.remove('hidden');
+    var changeDate = new Date(e.currentTarget.dataset.calendarData);
+    // console.log(changeDate.toLocaleDateString());
+    showTodoDate(changeDate);
+    todoInput.focus();
+    
   }
+  
+
+  function eraseCalendar() {
+    calendarDays.innerHTML = '';
+  }
+
+  // -----------------TODO List-----------------  
+  var inputValue;
+  var todoData = [];
+  var todoInput = document.querySelector('.todoInput');
+  var todos = document.querySelector('.todos');
+  var todoFooterToggle = document.querySelectorAll('.todoFooterToggle');
+  
+  todoInput.addEventListener('keyup', addList);
+  for(let i=0; i<todoFooterToggle.length; i++) {
+    todoFooterToggle[i].addEventListener('click', function (e) {
+      // console.log('do');
+      for(let j=0; j<todoFooterToggle.length; j++) {
+        if(todoFooterToggle[j].classList.value.match('selected')) {
+          todoFooterToggle[j].classList.remove('selected');
+        }
+      }
+      e.currentTarget.classList.add('selected');
+    })
+  }
+  
+
+  function showTodoDate(date) {
+    var todoDate = document.querySelector(".todoDate");
+    todoDate.innerHTML = date.toLocaleDateString();
+    todoDate.setAttribute('data-todo-data', date.toLocaleDateString());
+  }
+
+  function addList(e) {
+    if(e.code === 'Enter') {
+      // 데이터 입력 및 db추가
+      addData();
+    }
+    // } else {
+      inputValue = e.target.value;
+    // }
+  }
+
+  function addData() {
+    if((inputValue !== "") && (inputValue !== undefined)) {
+      todoData.push(inputValue);
+      todoInput.value = '';
+      inputValue = 0;
+      addTemplate(todos, todoData);
+      var todoRecord = document.querySelectorAll('.todoRecord');
+      clickFunc(todoRecord, todoData);
+    }
+  }
+
+  function addTemplate(addTo, data) {
+    var todoRecord = document.querySelectorAll('.todoRecord');
+    for (let child of todoRecord) {
+      addTo.removeChild(child);
+    }
+    for (let i = 0; i < data.length; i++) {
+      var template 
+      = `<li class="todoRecord">
+      <input class="toggle" type="checkbox">
+      <label for="toggle">${data[i]}</label>
+      <button class="destroy"></button>
+      </li>`;
+      addTo.innerHTML += template;
+    }
+  }
+
+  function clickFunc(addTo, data) {
+    // 항목 삭제
+    for(let i=0; i<addTo.length; i++) {
+      addTo[i].children[2].addEventListener('click', function(e) {
+        console.log('do something');
+        e.currentTarget.parentNode.remove();
+        console.log(data);
+        data.splice(i, 1);
+        console.log(data);
+        addTo = document.querySelectorAll('.todoRecord');
+      });
+    }
+  }
+
+  var clearCompleted = document.querySelector('.todoFooterRight');
+  clearCompleted.addEventListener('click', function () {
+    var toggle = document.querySelectorAll('.toggle');
+    for(let i=0; i<toggle.length; i++) {
+      if(toggle[i].checked) {
+        toggle[i].parentNode.remove();
+      }
+    }
+  })
+
 })();
+

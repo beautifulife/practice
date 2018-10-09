@@ -545,6 +545,7 @@ window.onload = realTime;
     }
   }
 
+  // 체크박스 전체선택기능
   function chooseAll(e) {
     var toggle = document.querySelectorAll('.toggle');
     // console.log(e.currentTarget.classList.value.match('checkedAll'));
@@ -570,6 +571,7 @@ window.onload = realTime;
     hideChooseAll()
   }
 
+  // 체크박스 선택기능 & 전체 선택기능버튼 숨기기,보이기
   function hideChooseAll() {
     var toggle = document.querySelectorAll('.toggle');
     var toggleCount = 0;

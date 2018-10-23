@@ -417,17 +417,22 @@ window.onload = realTime;
     var completed = '';
 
     // dataArr가 덮어씌워지는 것을 방지
+    // if(!dataArr[date]) {
+    //   if(dataArr) {
+    //     var dataArr2 = {[date]:[]};
+    //     Object.assign(dataArr, dataArr2);
+    //   } else {
+    //     dataArr = {[date]:[]};
+    //   }
+    // }
+    // dataArr[date].push({id:id, title:title, completed:completed});
+
+    // 수정된 코드
     if(!dataArr[date]) {
-      if(dataArr) {
-        var dataArr2 = {[date]:[]};
-        Object.assign(dataArr, dataArr2);
-      } else {
-        dataArr = {[date]:[]};
-      }
+      dataArr[date] = [];
     }
-    // console.log(dataArr);
-  
     dataArr[date].push({id:id, title:title, completed:completed});
+
     console.log(dataArr);
     
     // 탬플릿의 주요변수를 교체

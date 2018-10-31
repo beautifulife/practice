@@ -6,8 +6,9 @@ a{
   text-decoration: none;
 }
 
-.background{
+.background, .background2{
   max-width: 1100px;
+  min-width: 400px;
   height: 100%;
   margin: 0 auto;
   margin-left: 8%;
@@ -19,6 +20,8 @@ a{
 .nav {
   /* position:relative; */
   background-color: #ff6600;
+  max-width: 1100px;
+  min-width: 400px;
   height: 100;
   width:100;
   margin : 0 auto;
@@ -83,16 +86,15 @@ span {
 .main_left{
   position:absolute;
   left:7px;
-  width:34px;
+  width:45px;
   height:30px;
-  text-align:right;
+  text-align:center;
 }
 
 .main_number{
   display:inline-block;
   font-size:10pt;
   color:#828282;
-  
 }
 
 .upvote{
@@ -101,6 +103,7 @@ span {
   height:10px;
   border:0;
   background: url(https://news.ycombinator.com/grayarrow.gif) no-repeat;  
+  cursor: pointer;
 }
 
 .main_right{
@@ -144,6 +147,7 @@ span {
 #More {
   height:30px;
   line-height:30px;
+  cursor: pointer;
 }
 
 footer{
@@ -190,4 +194,5 @@ footer{
   height: 21px;
   font-size: 12px;
   box-sizing:border-box;
+  outline: none;
 }

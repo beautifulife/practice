@@ -22,18 +22,17 @@ request.send();
 
 const requestData = function(input) {
   for(let i=0; i<input.length; i++){
-    (function (i) {
-      var url = 'https://hacker-news.firebaseio.com/v0/item/'+input[i]+'.json';
-      // console.log(url);
-      var innerRequest = new XMLHttpRequest();
-      innerRequest.open('Get', url);
-      innerRequest.responseType = 'json';
-      innerRequest.onload = function() {
-        addData(innerRequest.response, i)
-        firstPress(dataBase)
-      }
-      innerRequest.send();
-    })(i);
+    let url = 'https://hacker-news.firebaseio.com/v0/item/'+input[i]+'.json';
+    let innerRequest = new XMLHttpRequest();
+    innerRequest.open('Get', url);
+    innerRequest.responseType = 'json';
+    innerRequest.onload = function() {
+      console.log(url);
+      addData(innerRequest.response, i)
+      firstPress(dataBase)
+      
+    }
+    innerRequest.send();
   }
 }
 
